@@ -1,0 +1,234 @@
+[
+  {
+    "id": "1",
+    "title": "Dreadspears",
+    "description": "The bulk of Dark Elf armies, with spears as unwavering as their pride.",
+    "price": 450,
+    "count": 120,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "2",
+    "title": "Bleakswords",
+    "description": "Schooled in slaughter through a lifetime of survival.",
+    "price": 450,
+    "count": 120,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "3",
+    "title": "Har Ganeth Executioners",
+    "description": "In the name of Khaine and with draichs in their hands, furious brutality is brought to the battlefield.",
+    "price": 1200,
+    "count": 100,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "4",
+    "title": "Harpies",
+    "description": "With savage claws and malicious temperament, to rip through enemies with grim delight.",
+    "price": 600,
+    "count": 60,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "5",
+    "title": "Sisters of Slaughter",
+    "description": "The Sisters of Slaughter are creatures of instinct, impossible to predict and unfathomably deadly.",
+    "price": 1100,
+    "count": 100,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "6",
+    "title": "Witch Elves",
+    "description": "Crazed by poisonous concoctions, their dual daggers lacerate and shred for the Bloody-handed God.",
+    "price": 800,
+    "count": 100,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "7",
+    "title": "Black Dragon",
+    "description": "Poison, horns, claws and teeth; a myriad ways to destroy the foe.",
+    "price": 2100,
+    "count": 1,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "8",
+    "title": "War Hydra",
+    "description": "A furious battlefield force; savage in combat and notoriously difficult to kill.",
+    "price": 1650,
+    "count": 1,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "9",
+    "title": "Bloodwrack Medusa",
+    "description": "Stripped of their beauteous forms by the goddess Atharti, Medusae know nothing but pain, torment, regret and anguish.",
+    "price": 1300,
+    "count": 1,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "10",
+    "title": "Black Ark Corsairs",
+    "description": "The cut and thrust of melee is child's play to those trained on tumultuous seas.",
+    "price": 650,
+    "count": 100,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "11",
+    "title": "Feral Manticore",
+    "description": "These incarnations of Khaine strike fear in to all those who stand before them.",
+    "price": 800,
+    "count": 1,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "12",
+    "title": "Kharibdyss",
+    "description": "A loathsome beast of uncharted depths possessing colossal strength and insatiable hunger.",
+    "price": 1700,
+    "count": 1,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "13",
+    "title": "Black Guard of Naggarond",
+    "description": "The Witch King is defended, at halberd-point, from those who would do him harm. Imagine such a thing!",
+    "price": 1300,
+    "count": 100,
+    "tags": ["Melee Infantry"]
+  },
+  {
+    "id": "14",
+    "title": "Darkshards",
+    "description": "True to their name, they wither their enemies with volleys of black-tipped arrows.",
+    "price": 550,
+    "count": 90,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "15",
+    "title": "Darkshards (Shields)",
+    "description": "True to their name, they wither their enemies with volleys of black-tipped arrows.",
+    "price": 650,
+    "count": 90,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "16",
+    "title": "Shades",
+    "description": "Betrayed and outcast by their peers, they bring savage vengeance to any who cross them",
+    "price": 950,
+    "count": 80,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "17",
+    "title": "Shades (Dual Weapons)",
+    "description": "The twin blades of these spurned Elves are brought to bear with truly brutal results.",
+    "price": 1050,
+    "count": 80,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "18",
+    "title": "Shades (Greatswords)",
+    "description": "The strength of these spiteful warriors is borne out by the horrific power of their weapons",
+    "price": 1150,
+    "count": 80,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "19",
+    "title": "Black Ark Corsairs (Handbows)",
+    "description": "Defeat and conquest, at the end of a quarrel.",
+    "price": 750,
+    "count": 100,
+    "tags": ["Missile Infantry"]
+  },
+  {
+    "id": "20",
+    "title": "Doomfire Warlocks",
+    "description": "Hollow-eyed murderers, the Doomfire Warlocks must loosen the grip of Slaanesh with the blood of others.",
+    "price": 1200,
+    "count": 60,
+    "tags": ["Cavalry", "Melee Cavalry"]
+  },
+  {
+    "id": "21",
+    "title": "Cold One Dread Knights",
+    "description": "Cavalry / Melee Cavalry / (wh2_main_def_cav_cold_one_knights_1)",
+    "price": 1300,
+    "count": 48,
+    "tags": ["Cavalry", "Melee Cavalry"]
+  },
+  {
+    "id": "22",
+    "title": "Dark Riders (Repeater Crossbow)",
+    "description": "Being everywhere and nowhere is their signature skill, with volleys of fire to harass the foe.",
+    "price": 650,
+    "count": 60,
+    "tags": ["Cavalry", "Missile Cavalry"]
+  },
+  {
+    "id": "23",
+    "title": "Cold One Knights",
+    "description": "Armed with a mighty lance for a powerful charge, then enchanted swords to deliver punishment up close.",
+    "price": 1000,
+    "count": 48,
+    "tags": ["Cavalry", "Shock Cavalry"]
+  },
+  {
+    "id": "24",
+    "title": "Dark Riders",
+    "description": "Fast and nimble, dodging enemy fire to deliver incisive hit-and-run charges to enemy lines.",
+    "price": 450,
+    "count": 60,
+    "tags": ["Cavalry", "Shock Cavalry"]
+  },
+  {
+    "id": "25",
+    "title": "Dark Riders (Shields)",
+    "description": "Their shields ensure that these riders can get in amongst the fray and remain there.",
+    "price": 500,
+    "count": 60,
+    "tags": ["Cavalry", "Shock Cavalry"]
+  },
+  {
+    "id": "26",
+    "title": "Cold One Chariots",
+    "description": "A charge so devastating that it rends the flesh and bone from its victims.",
+    "price": 1100,
+    "count": 12,
+    "tags": ["War Machine", "Chariot"]
+  },
+  {
+    "id": "27",
+    "title": "Scourgerunner Chariots",
+    "description": "Swift and untouchable to their foes, Scourgerunners can unleash a bombardment of powerful harpoons that can pierce even the toughest of hides.",
+    "price": 950,
+    "count": 12,
+    "tags": ["War Machine", "Chariot"]
+  },
+  {
+    "id": "28",
+    "title": "Bloodwrack Shrine",
+    "description": "To the Druchii, the scent of suffering is akin to the finest perfume, and no sound more despairing than the twisted echo of a shrine-bound Medusa.",
+    "price": 1800,
+    "count": 3,
+    "tags": ["War Machine", "Chariot"]
+  },
+  {
+    "id": "29",
+    "title": "Reaper Bolt Throwers",
+    "description": "Their bolts strike with such force that, should their targets survive, they are unfit to live even as slaves.",
+    "price": 700,
+    "count": 32,
+    "tags": ["Siege Engine", "Field Artillery"]
+  }
+]
