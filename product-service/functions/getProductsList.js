@@ -3,6 +3,6 @@ export default async function (event) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(products)
+    body: JSON.stringify(Array.from(products))
   };
 }
