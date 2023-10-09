@@ -1,8 +1,30 @@
+import { DynamoDB } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocument } from "@aws-sdk/lib-dynamodb";
+
 export default async function (event) {
+  const { productsTable, stocksTable } = process.env;
+  const client = new DynamoDB({})
+  const docClient = DynamoDBDocument.from(client);
+
   const id = event.pathParameters.productId;
-  let products
+
+  let product, stock;
   try {
-    products = await import("../mocks/products.json");
+    const stocksResponse = await docClient.get({
+      TableName: stocksTable,
+      Key: {
+        product_id: id
+      }
+    });
+    stock = stocksResponse.Item;
+
+    const response = await docClient.get({
+      TableName: productsTable,
+      Key: {
+        id
+      }
+    });
+    product = response.Item;
   } catch (e) {
     return {
       statusCode: 500,
@@ -12,8 +34,7 @@ export default async function (event) {
     };
   }
 
-  const item = products.find(item => item.id === id);
-  if (!item) {
+  if (!product) {
     return {
       statusCode: 404,
       body: JSON.stringify({
@@ -24,6 +45,9 @@ export default async function (event) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(item)
+    body: JSON.stringify({
+      ...product,
+      count: stock ? stock.count : 0
+    })
   };
 }

@@ -19,10 +19,10 @@ paths:
   /products:
     get:
       tags:
-        - pet
+        - product
       summary: get list of all products
       description: get list of all products
-      operationId: updatePet
+      operationId: getProductList
       responses:
         '200':
           description: Successful operation
@@ -31,12 +31,50 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Product'          
-            
+                  $ref: '#/components/schemas/Product'
+    post:
+      tags:
+        - product
+      summary: create a new product
+      description: create a new product
+      operationId: createProduct
+      requestBody:
+        description: object for product and stock
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title
+                description:
+                  type: string
+                  example: description
+                price:
+                  type: integer
+                  example: 500
+                count: 
+                  type: integer
+                  example: 60
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/CreateResponse'
+        '400':
+            description: Data is Invalid
+        '500':
+            description: Failed to store in DB
+        
+        
   /products/{productId}:
     get:
       tags:
-        - pet
+        - product
       summary: Find pet by ID
       description: Returns a single pet
       operationId: getPetById
@@ -87,5 +125,13 @@ components:
           type: array
           items:
             type: string
+    CreateResponse:
+      required:
+        - id
+      type: object
+      properties:
+        id:
+          type: string
+          example: c84c720c-2877-4145-9c8c-7a2c293b484f
 
  
