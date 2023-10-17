@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: Swagger AWS Shop - OpenAPI 3.0
+  description: description
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url:  https://txmacxl4y9.execute-api.us-east-1.amazonaws.com
+
+paths:
+  /products:
+    get:
+      tags:
+        - pet
+      summary: get list of all products
+      description: get list of all products
+      operationId: updatePet
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'          
+            
+  /products/{productId}:
+    get:
+      tags:
+        - pet
+      summary: Find pet by ID
+      description: Returns a single pet
+      operationId: getPetById
+      parameters:
+        - name: productId
+          in: path
+          description: ID of product
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'          
+        '404':
+          description: Item not found
+        '500':
+          description: Failed to load products
+
+components:
+  schemas:
+    Product:
+      required:
+        - id
+        - title
+        - description
+        - price
+        - count
+        - tags
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        title:
+          type: string
+          example: doggie
+        description:
+          type: string
+        price:
+          type: integer
+        count:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+
+ 
