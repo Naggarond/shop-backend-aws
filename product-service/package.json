@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.427.0",
+    "@aws-sdk/lib-dynamodb": "^3.427.0",
+    "@aws-sdk/util-dynamodb": "^3.427.0",
     "esbuild": "^0.19.4",
-    "serverless-esbuild": "^1.48.4"
+    "serverless-esbuild": "^1.48.4",
+    "uuid": "^9.0.1"
   }
 }

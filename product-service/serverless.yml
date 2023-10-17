@@ -23,6 +23,8 @@ custom:
   esbuild:
     platform: node
     target: node18
+  productsTable: products
+  stocksTable: stocks
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -35,24 +37,34 @@ provider:
   region: us-east-1
   httpApi:
     cors: true
+  
 
 # you can add statements to the Lambda function's IAM Role here
-#  iam:
-#    role:
-#      statements:
-#        - Effect: "Allow"
-#          Action:
-#            - "s3:ListBucket"
-#          Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#        - Effect: "Allow"
-#          Action:
-#            - "s3:PutObject"
-#          Resource:
-#            Fn::Join:
-#              - ""
-#              - - "arn:aws:s3:::"
-#                - "Ref" : "ServerlessDeploymentBucket"
-#                - "/*"
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "s3:ListBucket"
+          Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+        - Effect: "Allow"
+          Action:
+            - "s3:PutObject"
+          Resource:
+            Fn::Join:
+              - ""
+              - - "arn:aws:s3:::"
+                - "Ref" : "ServerlessDeploymentBucket"
+                - "/*"
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: "*"
 
 # you can define service wide environment variables here
 #  environment:
@@ -69,6 +81,9 @@ provider:
 functions:
   getProductsList:
     handler: functions/getProductsList.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
     events:
       - httpApi:
           path: /products
@@ -76,10 +91,22 @@ functions:
           
   getProductById:
     handler: functions/getProductById.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
     events: 
       - httpApi:
           path: /products/{productId}
           method: get
+  createProduct:
+    handler: functions/createProduct.default
+    environment:
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+    events:
+      - httpApi:
+          path: /products
+          method: post
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
