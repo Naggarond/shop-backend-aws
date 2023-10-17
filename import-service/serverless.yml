@@ -1,0 +1,50 @@
+service: import-service
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    platform: node
+    target: node18
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "s3:GetObject"
+            - "s3:PutObject"
+            - "s3:DeleteObject"
+          Resource:
+            - "arn:aws:s3:::shop-aws-task-5-container/*"
+
+functions:
+  importProductsFile:
+    handler: functions/importProductsFile.default
+    events: 
+      - http:
+          path: /import
+          method: get
+          request:
+            parameters:
+              querystrings:
+                name: true
+  importFileParser:
+    handler: functions/importFileParser.default
+    events:
+      - s3:
+          bucket: shop-aws-task-5-container
+          event: s3:ObjectCreated:*
+          rules:
+            - prefix: uploaded/
+            - suffix: .csv
+          existing: true
