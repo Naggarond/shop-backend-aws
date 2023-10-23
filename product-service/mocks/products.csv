@@ -1,0 +1,30 @@
+id,title,description,price,count,tags/0,tags/1
+1,Dreadspears,"The bulk of Dark Elf armies, with spears as unwavering as their pride.",450,120,Melee Infantry,
+2,Bleakswords,Schooled in slaughter through a lifetime of survival.,450,120,Melee Infantry,
+3,Har Ganeth Executioners,"In the name of Khaine and with draichs in their hands, furious brutality is brought to the battlefield.",1200,100,Melee Infantry,
+4,Harpies,"With savage claws and malicious temperament, to rip through enemies with grim delight.",600,60,Melee Infantry,
+5,Sisters of Slaughter,"The Sisters of Slaughter are creatures of instinct, impossible to predict and unfathomably deadly.",1100,100,Melee Infantry,
+6,Witch Elves,"Crazed by poisonous concoctions, their dual daggers lacerate and shred for the Bloody-handed God.",800,100,Melee Infantry,
+7,Black Dragon,"Poison, horns, claws and teeth; a myriad ways to destroy the foe.",2100,1,Melee Infantry,
+8,War Hydra,A furious battlefield force; savage in combat and notoriously difficult to kill.,1650,1,Melee Infantry,
+9,Bloodwrack Medusa,"Stripped of their beauteous forms by the goddess Atharti, Medusae know nothing but pain, torment, regret and anguish.",1300,1,Melee Infantry,
+10,Black Ark Corsairs,The cut and thrust of melee is child's play to those trained on tumultuous seas.,650,100,Melee Infantry,
+11,Feral Manticore,These incarnations of Khaine strike fear in to all those who stand before them.,800,1,Melee Infantry,
+12,Kharibdyss,A loathsome beast of uncharted depths possessing colossal strength and insatiable hunger.,1700,1,Melee Infantry,
+13,Black Guard of Naggarond,"The Witch King is defended, at halberd-point, from those who would do him harm. Imagine such a thing!",1300,100,Melee Infantry,
+14,Darkshards,"True to their name, they wither their enemies with volleys of black-tipped arrows.",550,90,Missile Infantry,
+15,Darkshards (Shields),"True to their name, they wither their enemies with volleys of black-tipped arrows.",650,90,Missile Infantry,
+16,Shades,"Betrayed and outcast by their peers, they bring savage vengeance to any who cross them",950,80,Missile Infantry,
+17,Shades (Dual Weapons),The twin blades of these spurned Elves are brought to bear with truly brutal results.,1050,80,Missile Infantry,
+18,Shades (Greatswords),The strength of these spiteful warriors is borne out by the horrific power of their weapons,1150,80,Missile Infantry,
+19,Black Ark Corsairs (Handbows),"Defeat and conquest, at the end of a quarrel.",750,100,Missile Infantry,
+20,Doomfire Warlocks,"Hollow-eyed murderers, the Doomfire Warlocks must loosen the grip of Slaanesh with the blood of others.",1200,60,Cavalry,Melee Cavalry
+21,Cold One Dread Knights,Cavalry / Melee Cavalry / (wh2_main_def_cav_cold_one_knights_1),1300,48,Cavalry,Melee Cavalry
+22,Dark Riders (Repeater Crossbow),"Being everywhere and nowhere is their signature skill, with volleys of fire to harass the foe.",650,60,Cavalry,Missile Cavalry
+23,Cold One Knights,"Armed with a mighty lance for a powerful charge, then enchanted swords to deliver punishment up close.",1000,48,Cavalry,Shock Cavalry
+24,Dark Riders,"Fast and nimble, dodging enemy fire to deliver incisive hit-and-run charges to enemy lines.",450,60,Cavalry,Shock Cavalry
+25,Dark Riders (Shields),Their shields ensure that these riders can get in amongst the fray and remain there.,500,60,Cavalry,Shock Cavalry
+26,Cold One Chariots,A charge so devastating that it rends the flesh and bone from its victims.,1100,12,War Machine,Chariot
+27,Scourgerunner Chariots,"Swift and untouchable to their foes, Scourgerunners can unleash a bombardment of powerful harpoons that can pierce even the toughest of hides.",950,12,War Machine,Chariot
+28,Bloodwrack Shrine,"To the Druchii, the scent of suffering is akin to the finest perfume, and no sound more despairing than the twisted echo of a shrine-bound Medusa.",1800,3,War Machine,Chariot
+29,Reaper Bolt Throwers,"Their bolts strike with such force that, should their targets survive, they are unfit to live even as slaves.",700,32,Siege Engine,Field Artillery
