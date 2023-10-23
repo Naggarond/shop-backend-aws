@@ -65,6 +65,10 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:DeleteItem
           Resource: "*"
+        - Effect: "Allow"
+          Action:
+            - "sns:Publish"
+          Resource: "*"
 
 # you can define service wide environment variables here
 #  environment:
@@ -107,6 +111,21 @@ functions:
       - httpApi:
           path: /products
           method: post
+
+  catalogBatchProcess:
+    handler: functions/catalogBatchProcess.default
+    environment: 
+      productsTable: ${self:custom.productsTable}
+      stocksTable: ${self:custom.stocksTable}
+      topic: "arn:aws:sns:us-east-1:060881416814:createProductTopic"
+    events:
+      - sqs:
+          batchSize: 5
+          arn:
+            Fn::GetAtt:
+              - catalogItemsQueue
+              - Arn
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
@@ -155,3 +174,31 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+resources:
+  Resources:
+    catalogItemsQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: catalogItemsQueue
+    createProductTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: createProductTopic
+        Subscription:
+          - Endpoint: fallinmyhand@gmail.com
+            Protocol: email
+
+    filteredSubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: fallinmyhand+1@gmail.com
+        Protocol: email
+        FilterPolicyScope: MessageBody
+        FilterPolicy: 
+          price: 
+            - 800
+            - 650
+        TopicArn: arn:aws:sns:us-east-1:060881416814:createProductTopic
+
+
+    

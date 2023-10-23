@@ -1,4 +1,5 @@
 import { S3Client, DeleteObjectCommand, GetObjectCommand } from '@aws-sdk/client-s3';
+import { GetQueueUrlCommand, SQSClient, SendMessageCommand } from "@aws-sdk/client-sqs";
 import { Upload } from '@aws-sdk/lib-storage';
 import csv from 'csv-parser';
 import { PassThrough } from 'stream';
@@ -6,13 +7,26 @@ import { PassThrough } from 'stream';
 const BUCKET_NAME = 'shop-aws-task-5-container';
 
 export default async function (event) {
+  const { queue } = process.env;
   const client = new S3Client();
+  const sqsClient = new SQSClient();
 
-  console.log('event', event)
+  let queueUrl;
+  try {
+    const response = await sqsClient.send(
+      new GetQueueUrlCommand({
+        QueueName: queue
+      })
+    );
+    queueUrl = response.QueueUrl;
+  } catch (e) {
+
+    console.log('getUrlError', e);
+    return
+  }
 
   for (const record of event.Records) {
     const fileName = record.s3.object.key.split('/')[1]
-    console.log('filename: ', fileName)
     const { Body } = await client.send(new GetObjectCommand({
       Key: `uploaded/${fileName}`,
       Bucket: BUCKET_NAME
@@ -21,7 +35,12 @@ export default async function (event) {
     // reading
     Body.pipe(csv())
       .on('data', (chunk) => {
-        console.log('chunk', chunk)
+        sqsClient.send(
+          new SendMessageCommand({
+            QueueUrl: queueUrl,
+            MessageBody: JSON.stringify(chunk)
+          })
+        );
       })
       .on('end', () => {
         console.log('write ended')

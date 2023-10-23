@@ -7,6 +7,7 @@ custom:
   esbuild:
     platform: node
     target: node18
+  queue_name: catalogItemsQueue
 
 frameworkVersion: "3"
 
@@ -26,6 +27,11 @@ provider:
             - "s3:DeleteObject"
           Resource:
             - "arn:aws:s3:::shop-aws-task-5-container/*"
+        - Effect: "Allow"
+          Action:
+            - "sqs:GetQueueUrl"
+            - "sqs:SendMessage"
+          Resource: "*"
 
 functions:
   importProductsFile:
@@ -48,3 +54,5 @@ functions:
             - prefix: uploaded/
             - suffix: .csv
           existing: true
+    environment:
+      queue: ${self:custom.queue_name}
