@@ -40,10 +40,15 @@ functions:
       - http:
           path: /import
           method: get
+          cors: true
           request:
             parameters:
               querystrings:
                 name: true
+          authorizer: {
+            arn: 'arn:aws:lambda:${self:provider.region}:060881416814:function:authorization-service-dev-basicAuthorizer',
+            type: 'request'
+          }
   importFileParser:
     handler: functions/importFileParser.default
     events:
@@ -56,3 +61,15 @@ functions:
           existing: true
     environment:
       queue: ${self:custom.queue_name}
+
+resources:
+  Resources:
+    Unauthorized:
+      Type: AWS::ApiGateway::GatewayResponse
+      Properties:
+        ResponseParameters:
+          "gatewayresponse.header.Access-Control-Allow-Origin": "'*'"
+          "gatewayresponse.header.Access-Control-Allow-Headers": "'*'"
+        ResponseType: "DEFAULT_4XX"
+        RestApiId:
+          Ref: "ApiGatewayRestApi"
