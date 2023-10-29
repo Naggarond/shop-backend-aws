@@ -1,0 +1,23 @@
+service: authorization-service
+
+plugins:
+  - serverless-esbuild
+  - serverless-dotenv-plugin
+
+custom:
+  esbuild:
+    platform: node
+    target: node18
+frameworkVersion: "3"
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+
+functions:
+  basicAuthorizer:
+    handler: functions/basicAuthorizer.default
+      

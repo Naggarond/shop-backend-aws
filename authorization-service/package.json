@@ -1,0 +1,17 @@
+{
+  "name": "authorization-service",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.19.4",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-esbuild": "^1.48.5",
+    "vitest": "^0.34.6"
+  }
+}
